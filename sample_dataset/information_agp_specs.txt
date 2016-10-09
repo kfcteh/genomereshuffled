@@ -1,0 +1,65 @@
+#======================#
+  AGP data structure
+#======================#
+
+Details of official NCBI AGPspecs v2.0
+-https://www.ncbi.nlm.nih.gov/assembly/agp/AGP_Specification/
+
+At the most basic component an AGP file is a tab-delimited file consisting of:
+
+  1) The assembled object component name (ie the overall map that every individual parts/components will use to buld upon).  Example Chromosome 1.
+
+  2) The assembled object start coordinate for the individual part/component.
+
+  3) The assembled object end coordinate for the individual part/component.
+
+  4) the line count
+
+  5) part/component type.  See online specs for differing types.  Usually referring to the finishing status of the genomic component.  Most commonly used, F & W for finished and WGS component and N & U for GAP(s) between components.
+
+  6) 
+   if GAP then 
+    6a) it will be the size of the gap :
+   otherwise, 	
+    6b) it will be the name of the part/component.
+
+  7) If GAP then
+    7a) type of gap eg) telomere, contig etc.
+   otherwise, 
+    7b) the start coordinate of the component
+
+  8) If GAP then
+    8a) yes|no, defining linkage between components adjacent to gaps.
+    8b) the end coordinate of the component
+
+  9) If GAP then
+    9a) the evidence for gap linkage, if none, use na.
+   otherwise,
+    9b) the orientation of the component.
+
+-
+
+There are more columns but these are the minimum columns required to have a functional AGP file.
+
+
+-
+
+example)
+
+==
+ chrY is the assembled object with col 2,3 as the coordinates of chrY.  "W" components start with "AAD%".
+==
+
+chrY	1	10000	1	N	10000	telomere	no	na
+chrY	10001	13043	2	W	AADB02037551.1	1	3043	+
+chrY	13044	63043	3	N	50000	contig	no	na
+chrY	63044	103491	4	W	AADB02037552.1	1	40448	+
+chrY	103492	103704	5	N	213	scaffold	yes	paired-ends
+chrY	103705	180685	6	W	AADB02037553.1	1	76981	+
+chrY	180686	180761	7	N	76	scaffold	yes	paired-ends
+chrY	180762	208430	8	W	AADB02037554.1	1	27669	+
+chrY	208431	208528	9	N	98	scaffold	yes	paired-ends
+chrY	208529	211480	10	W	AADB02037555.1	1	2952	+
+
+
+ 

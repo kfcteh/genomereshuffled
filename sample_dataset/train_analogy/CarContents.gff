@@ -1,0 +1,8 @@
+OILCAR	BCRAIL	Oil	10	49	.	+	.	PARENT=toronto;ID=barrel1;NAME=tor_1of2
+OILCAR	BCRAIL	Oil	501	550	.	-	.	PARENT=toronto;ID=barrel2;NAME=tor_2of2
+OILCAR	BCRAIL	Wheat	901	950	.	+	.	PARENT=ottawa;ID=box1;NAME=ott_1of2
+CORNCAR_1	BCRAIL	Corn	1	100	.	+	.	PARENT=montreal;ID=bag1;NAME=mtl_1of2
+CORNCAR_1	BCRAIL	Corn	601	700	.	+	.	PARENT=montreal;ID=bag2;NAME=mtl_2of2
+CORNCAR_1	BCRAIL	Corn	801	900	.	+	.	PARENT=halifax;ID=bigbag1;NAME=hal_1of2
+CORNCAR_2	BCRAIL	Corn	701	800	.	+	.	PARENT=halifax;ID=bigbag2;NAME=hal_2of2
+WHEATCAR	BCRAIL	Wheat	301	400	.	-	.	PARENT=ottawa;ID=box2;NAME=ott_2of2	
