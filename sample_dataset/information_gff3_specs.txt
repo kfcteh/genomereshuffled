@@ -1,0 +1,30 @@
+#====================================#
+   Information regarding GFF3 Specs
+#====================================#
+
+-Spec Resources:
+   http://www.broadinstitute.org/annotation/argo/help/gff3.html
+   https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
+
+== Background ==
+
+GFF3 is a data format primarily for annotation for use with various public 
+genome browsers.  At its core, its a genomic coordinate system for mapped
+features on genomic components.
+
+The core columns required consists of component name, coordinates, orientation, then the grouping
+attributes.
+
+---
+
+    seqname - The name of the sequence. Typically a chromosome or a contig. Argo does not care what you put here. It will superimpose gff features on any sequence you like.
+    source - The program that generated this feature. Argo displays the value of this field in the inspector but does not do anything special with it.
+    feature - The name of this type of feature. The official GFF3 spec states that this should be a term from the SOFA ontology, but Argo does not do anything with this value except display it.
+    start - The starting position of the feature in the sequence. The first base is numbered 1.
+    end - The ending position of the feature (inclusive).
+    score - A score between 0 and 1000. If there is no score value, enter ".".
+    strand - Valid entries include '+', '-', or '.' (for don't know/don't care).
+    frame - If the feature is a coding exon, frame should be a number between 0-2 that represents the reading frame of the first base. If the feature is not a coding exon, the value should be '.'. Argo does not do anything with this field except display its value.
+    GFF3: grouping attributes Attribute keys and values are separated by '=' signs. Values must be URI encoded.quoted. Attribute pairs are separated by semicolons. Certain, special attributes are used for grouping and identification (See below). This field is the one important difference between GFF flavors.
+
+--

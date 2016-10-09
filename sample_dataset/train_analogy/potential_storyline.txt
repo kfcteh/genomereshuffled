@@ -1,0 +1,33 @@
+--Potential storyline to teach how the assembly process works--
+
+BCRail has assembled a shipment consisting of 4 cars to eastern canada.
+
+1) see BCRail.agp for the mapping of the cars in the shipment BCRAIL_1.
+
+2) currently the order of the cars are OILCAR-CORNCAR_1-CORNCAR_2-WHEATCAR.
+
+3) however the organization of the contents of the car was messed up and 
+   not optimized for distribution when the rail hits their destination(s).
+   Distribution occurs from left car to right.
+
+4) see CarContents.gff to see the contents and their relative 
+   location within each car.
+	4a) cars should be organized based on contents to make 
+   	    distribution easier
+	4b) contents are usually paired up and chained, but the 
+	    chaining mechanism is orientation based.
+		eg) 	  [x]- [y]-  are in facing forward (+). 
+			Connect by flipping one them (-), 
+			  [x]--[y] so like so:
+			  box1(+) - box2(-)
+	    *chaining can go through gaps/cars.
+
+
+SOLUTION:
+
+The correct fixes would be:
+
+1) Move WHEATCAR right after OILCAR because of the linkage of box1 to box2, WHEATCAR remains +, because box1(+) works with box2(-).
+
+2) Flip CORNCAR_2 to (-) orientation because in the current setup bigbag1 and bigbag2 are both (+).  So to chain, one of these has to flip.  Flipping CORNCAR_2 is the easiest.  Flipping CORNCAR_1 would require moving CORNCAR_2 as first car, but since halifax is last desitnation, keep the car to the right.
+
